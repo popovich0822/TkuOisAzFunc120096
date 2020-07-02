@@ -18,8 +18,6 @@ namespace TkuOisAzFunc120096
             [Queue("employees")] IAsyncCollector<string> rowKeyQueue,
             ILogger log)
         {
-            log.LogInformation("Received a payment.");
-
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             var data = JsonConvert.DeserializeObject<Employee>(requestBody);
 
