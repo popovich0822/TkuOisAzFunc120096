@@ -20,8 +20,8 @@ namespace TkuOisAzFunc120096
 
             message = new SendGridMessage();
             message.From = new EmailAddress(Environment.GetEnvironmentVariable("EmailSender"));
-            message.Subject = input + "'s personal informaion.";
-            message.HtmlContent = "Employee ID: " + employee.RowKey + ", Employee Name: " + employee.EmpName;
+            message.Subject = input + "'s personal informaion (dev)";
+            message.HtmlContent = "Employee ID: " + employee.RowKey + ", Employee Name: " + employee.EmpName + ", Employee Email: " + employee.EmpEmail;
             message.AddTo(email);
         }
     }
